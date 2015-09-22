@@ -6,15 +6,13 @@
  * Copyright and license information can be found at LICENSE
  * distributed with this package.
  */
-namespace Eden\Handler\test;
- 
-class Error extends \PHPUnit_Framework_TestCase
+class EdenHandlerErrorTest extends PHPUnit_Framework_TestCase
 {
     public function testHandle() 
 	{
 		$test = $this;
 		
-		\Eden\Handler\Error::i()
+		Eden\Handler\Error::i()
 			->on('error', function(
 				$type, 
 				$level,

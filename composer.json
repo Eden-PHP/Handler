@@ -16,6 +16,6 @@
 		"eden/core": "2.*",
     },
     "autoload": {
-         "psr-4": { "Eden\\Handler\\": "" }
+         "psr-4": { "Eden\\Handler\\": "/src" }
     }
 }

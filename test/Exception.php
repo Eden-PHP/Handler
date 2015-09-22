@@ -6,15 +6,13 @@
  * Copyright and license information can be found at LICENSE
  * distributed with this package.
  */
-namespace Eden\Handler\test;
- 
-class Exception extends \PHPUnit_Framework_TestCase
+class EdenHandlerExceptionTest extends \PHPUnit_Framework_TestCase
 {
     public function testHandle() 
 	{
 		$test = $this;
 		
-		\Eden\Handler\Exception::i()
+		Eden\Handler\Exception::i()
 			->on('exception', function(
 				$type, 
 				$level,

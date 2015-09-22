@@ -39,14 +39,4 @@ class Index extends Base
 	{
         return Exception::i();
     }
-
-    /**
-     * Returns the loader class
-     *
-     * @return Eden\Handler\Loader
-     */
-    public function loader() 
-	{
-        return Eden_Handler_Loader::i();
-    }
 }
