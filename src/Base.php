@@ -14,7 +14,7 @@ namespace Eden\Handler;
  * Starts laying out how classes and methods are handled.
  *
  * @package    Eden
- * @category   core
+ * @category   handler
  * @author     Christian Blanquera cblanquera@openovate.com
  */
 class Base extends \Eden\Core\Base 

@@ -6,9 +6,4 @@
  * Copyright and license information can be found at LICENSE
  * distributed with this package.
  */
-
-require_once __DIR__.'/../Loader.php';
-Eden\Handler\Loader::i()
-	->addRoot(true)
-	->register()
-	->load('Eden\Core\Control');
+require_once __DIR__.'/../../../autoload.php';
