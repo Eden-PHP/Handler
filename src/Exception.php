@@ -39,7 +39,7 @@ class Exception extends Base
         $message 	= $e->getMessage();
 
         //if the exception is an eden exception
-        if($e instanceof Eden_Exception) {
+        if($e instanceof \Eden\Core\Exception) {
             //set type and level from that
             $trace 		= $e->getRawTrace();
 
