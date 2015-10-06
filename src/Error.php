@@ -12,34 +12,34 @@ namespace Eden\Handler;
 /**
  * Error event hander
  *
- * @package    Eden
- * @category   handler
- * @author     Christian Blanquera cblanquera@openovate.com
+ * @package  Eden
+ * @category handler
+ * @author   Christian Blanquera cblanquera@openovate.com
  */
-class Error extends Base 
+class Error extends Base
 {
-	const INSTANCE 	= 1;
-	
-	//error type
-    const PHP 		= 'PHP'; //used when argument is invalidated
-    const UNKNOWN 	= 'UNKNOWN';
+    const INSTANCE     = 1;
+    
+    //error type
+    const PHP         = 'PHP'; //used when argument is invalidated
+    const UNKNOWN     = 'UNKNOWN';
 
     //error level
-    const WARNING 	= 'WARNING';
-    const ERROR 	= 'ERROR';
-	
-	/**
+    const WARNING     = 'WARNING';
+    const ERROR     = 'ERROR';
+    
+    /**
      * Called when a PHP error has occured. Must
      * use setErrorHandler() first.
      *
-     * @param *number error number
-     * @param *string message
-     * @param *string file
-     * @param *string line
+     * @param  *number error number
+     * @param  *string message
+     * @param  *string file
+     * @param  *string line
      * @return true
      */
-    public function handle($errno, $errstr, $errfile, $errline) 
-	{
+    public function handle($errno, $errstr, $errfile, $errline)
+    {
         //depending on the error number
         //we can determine the error level
         switch ($errno) {
@@ -66,30 +66,37 @@ class Error extends Base
         $class = self::UNKNOWN;
 
         //if there is a trace
-        if(count($trace) > 1) {
+        if (count($trace) > 1) {
             //formulate the class
             $class = $trace[1]['function'].'()';
-            if(isset($trace[1]['class'])) {
+            if (isset($trace[1]['class'])) {
                 $class = $trace[1]['class'].'->'.$class;
             }
         }
 
         $this->trigger(
-            'error',    $type,        $level,
-            $class,     $errfile,     $errline,
-            $errstr,    $trace,       1);
+            'error',
+            $type,
+            $level,
+            $class,
+            $errfile,
+            $errline,
+            $errstr,
+            $trace,
+            1
+        );
 
         //Don't execute PHP internal error handler
         return true;
     }
 
-   /**
+    /**
      * Returns default handler back to PHP
      *
      * @return this
      */
-    public function release() 
-	{
+    public function release()
+    {
         restore_error_handler();
         return $this;
     }
@@ -99,8 +106,8 @@ class Error extends Base
      *
      * @return this
      */
-    public function register() 
-	{
+    public function register()
+    {
         set_error_handler(array($this, 'handle'));
         return $this;
     }
@@ -108,13 +115,12 @@ class Error extends Base
     /**
      * Sets reporting
      *
-     * @param *int
+     * @param  *int
      * @return this
      */
-    public function setReporting($type) 
-	{
+    public function setReporting($type)
+    {
         error_reporting($type);
         return $this;
     }
-	
 }

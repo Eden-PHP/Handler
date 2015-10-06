@@ -13,8 +13,8 @@
 >
   <testsuites>
     <testsuite name="Eden Handler Test Suite">
-      <file>test/Exception.php</file>
       <file>test/Error.php</file>
+      <file>test/Exception.php</file>
     </testsuite>
   </testsuites>
 

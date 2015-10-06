@@ -12,47 +12,54 @@ namespace Eden\Handler;
 /**
  * Exception event handler
  *
- * @package    Eden
- * @category   handler
- * @author     Christian Blanquera
+ * @package  Eden
+ * @category handler
+ * @author   Christian Blanquera
  */
-class Exception extends Base 
+class Exception extends Base
 {
-	const INSTANCE = 1;
-	
-	/**
+    const INSTANCE = 1;
+    
+    /**
      * Called when a PHP exception has occured. Must
      * use setExceptionHandler() first.
      *
-     * @param *Exception
+     * @param  *Exception
      * @return void
      */
-    public function handle(\Exception $e) 
-	{
+    public function handle(\Exception $e)
+    {
         //by default set LOGIC ERROR
-        $type 		= \Eden\Core\Exception::LOGIC;
-        $level 		= \Eden\Core\Exception::ERROR;
-        $offset 	= 1;
-        $reporter 	= get_class($e);
+        $type         = \Eden\Core\Exception::LOGIC;
+        $level         = \Eden\Core\Exception::ERROR;
+        $offset     = 1;
+        $reporter     = get_class($e);
 
-        $trace 		= $e->getTrace();
-        $message 	= $e->getMessage();
+        $trace         = $e->getTrace();
+        $message     = $e->getMessage();
 
         //if the exception is an eden exception
-        if($e instanceof \Eden\Core\Exception) {
+        if ($e instanceof \Eden\Core\Exception) {
             //set type and level from that
-            $trace 		= $e->getRawTrace();
+            $trace         = $e->getRawTrace();
 
-            $type 		= $e->getType();
-            $level 		= $e->getLevel();
-            $offset 	= $e->getTraceOffset();
-            $reporter 	= $e->getReporter();
+            $type         = $e->getType();
+            $level         = $e->getLevel();
+            $offset     = $e->getTraceOffset();
+            $reporter     = $e->getReporter();
         }
 
         $this->trigger(
-            'exception', $type,             $level,
-            $reporter,   $e->getFile(),     $e->getLine(),
-            $message,    $trace,            $offset);
+            'exception',
+            $type,
+            $level,
+            $reporter,
+            $e->getFile(),
+            $e->getLine(),
+            $message,
+            $trace,
+            $offset
+        );
     }
 
     /**
@@ -60,8 +67,8 @@ class Exception extends Base
      *
      * @return this
      */
-    public function release() 
-	{
+    public function release()
+    {
         restore_exception_handler();
         return $this;
     }
@@ -71,8 +78,8 @@ class Exception extends Base
      *
      * @return this
      */
-    public function register() 
-	{
+    public function register()
+    {
         set_exception_handler(array($this, 'handle'));
         return $this;
     }

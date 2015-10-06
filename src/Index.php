@@ -12,21 +12,21 @@ namespace Eden\Handler;
 /**
  * Core Factory Class
  *
- * @package    Eden
- * @category   handler
- * @author     Christian Blanquera cblanquera@openovate.com
+ * @package  Eden
+ * @category handler
+ * @author   Christian Blanquera cblanquera@openovate.com
  */
-class Index extends Base 
+class Index extends Base
 {
-	const INSTANCE = 1;
-	 
-	/**
+    const INSTANCE = 1;
+     
+    /**
      * Returns the error class
      *
      * @return Eden\Handler\Error
      */
-    public function error() 
-	{
+    public function error()
+    {
         return Error::i();
     }
 
@@ -35,8 +35,8 @@ class Index extends Base
      *
      * @return Eden\Handler\Exception
      */
-    public function exception() 
-	{
+    public function exception()
+    {
         return Exception::i();
     }
 }
