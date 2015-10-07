@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/Eden-PHP/Handler.png)](https://travis-ci.org/Eden-PHP/Handler)
+===
 ![logo](http://eden.openovate.com/assets/images/cloud-social.png) Eden Handler
 ====
 
