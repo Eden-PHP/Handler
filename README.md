@@ -5,6 +5,7 @@
 
 - [Install](#install)
 - [Introduction](#intro)
+- [API](#api)
 - [Contributing](#contributing)
 
 ====
@@ -19,7 +20,82 @@
 <a name="intro"></a>
 ## Introduction
 
-TODO
+Allows errors and exceptions to be event driven.
+
+====
+
+<a name="api"></a>
+## API
+
+====
+
+### Registering the Exception Handler
+
+Adds an event driven way to respond to exceptions.
+
+#### Example
+
+```
+eden('handler')
+	->exception()
+	->register()
+	->on('exception', function(
+		$type,
+		$level,
+        $reporter,
+		$file,
+		$line,
+        $message,
+		$trace
+	) {
+		echo 'An exception has occurred';
+	});
+```
+
+====
+
+### Releasing the Exception Handler
+
+#### Example
+
+```
+eden('handler')->exception()->release();
+```
+
+====
+
+### Registering the Error Handler
+
+Adds an event driven way to respond to PHP errors.
+
+#### Example
+
+```
+eden('handler')
+	->error()
+	->register()
+	->on('error', function(
+		$type,
+		$level,
+        $reporter,
+		$file,
+		$line,
+        $message,
+		$trace
+	) {
+		echo 'An error has occurred';
+	});
+```
+
+====
+
+### Releasing the Error Handler
+
+#### Example
+
+```
+eden('handler')->error()->release();
+```
 
 ====
 
