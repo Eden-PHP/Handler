@@ -13,7 +13,7 @@ namespace Eden\Handler;
  * Core Factory Class
  *
  * @package  Eden
- * @category handler
+ * @category Handler
  * @author   Christian Blanquera <cblanquera@openovate.com>
  * @standard PSR-2
  */

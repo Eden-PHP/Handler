@@ -13,7 +13,7 @@ namespace Eden\Handler;
  * Error event hander
  *
  * @package  Eden
- * @category handler
+ * @category Handler
  * @author   Christian Blanquera <cblanquera@openovate.com>
  * @standard PSR-2
  */
@@ -33,10 +33,10 @@ class Error extends Base
      * Called when a PHP error has occured. Must
      * use setErrorHandler() first.
      *
-     * @param  *number error number
-     * @param  *string message
-     * @param  *string file
-     * @param  *string line
+     * @param  *number  $errno      error number
+     * @param  *string  $errstr     message
+     * @param  *string  $errfile    file
+     * @param  *string  $errline    line
      *
      * @return true
      */
@@ -95,7 +95,7 @@ class Error extends Base
     /**
      * Returns default handler back to PHP
      *
-     * @return this
+     * @return Eden\Handler\Error
      */
     public function release()
     {
@@ -106,7 +106,7 @@ class Error extends Base
     /**
      * Registers this class' error handler to PHP
      *
-     * @return this
+     * @return Eden\Handler\Error
      */
     public function register()
     {
@@ -117,9 +117,9 @@ class Error extends Base
     /**
      * Sets reporting
      *
-     * @param  *int
+     * @param  *int $type type
      *
-     * @return this
+     * @return Eden\Handler\Error
      */
     public function setReporting($type)
     {
