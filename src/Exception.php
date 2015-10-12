@@ -1,11 +1,11 @@
 <?php //-->
-/**
+/*
  * This file is part of the Eden package.
  * (c) 2014-2016 Openovate Labs
  *
  * Copyright and license information can be found at LICENSE.txt
  * distributed with this package.
- */
+ */ 
 
 namespace Eden\Handler;
 
@@ -13,7 +13,7 @@ namespace Eden\Handler;
  * Exception event handler
  *
  * @package  Eden
- * @category handler
+ * @category Handler
  * @author   Christian Blanquera
  */
 class Exception extends Base
@@ -24,8 +24,7 @@ class Exception extends Base
      * Called when a PHP exception has occured. Must
      * use setExceptionHandler() first.
      *
-     * @param  *Exception
-     *
+     * @param  *Exception $e    Exception
      * @return void
      */
     public function handle(\Exception $e)
@@ -66,7 +65,7 @@ class Exception extends Base
     /**
      * Returns default handler back to PHP
      *
-     * @return this
+     * @return Eden\Handler\Exception
      */
     public function release()
     {
@@ -77,7 +76,7 @@ class Exception extends Base
     /**
      * Registers this class' error handler to PHP
      *
-     * @return this
+     * @return Eden\Handler\Exception
      */
     public function register()
     {
