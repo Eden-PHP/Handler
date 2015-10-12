@@ -1,5 +1,5 @@
 <?php //-->
-/*
+/**
  * This file is part of the Eden package.
  * (c) 2014-2016 Openovate Labs
  *
@@ -25,6 +25,7 @@ class Exception extends Base
      * use setExceptionHandler() first.
      *
      * @param  *Exception
+     *
      * @return void
      */
     public function handle(\Exception $e)

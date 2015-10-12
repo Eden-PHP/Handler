@@ -1,5 +1,5 @@
 <?php //-->
-/*
+/**
  * This file is part of the Eden package.
  * (c) 2014-2016 Openovate Labs
  *
@@ -14,7 +14,8 @@ namespace Eden\Handler;
  *
  * @package  Eden
  * @category handler
- * @author   Christian Blanquera cblanquera@openovate.com
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Index extends Base
 {

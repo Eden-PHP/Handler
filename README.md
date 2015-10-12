@@ -1,26 +1,47 @@
-[![Build Status](https://api.travis-ci.org/Eden-PHP/Handler.png)](https://travis-ci.org/Eden-PHP/Handler)
-===
 ![logo](http://eden.openovate.com/assets/images/cloud-social.png) Eden Handler
 ====
+[![Build Status](https://api.travis-ci.org/Eden-PHP/Handler.png)](https://travis-ci.org/Eden-PHP/Handler)
+====
 
+- [Install](#install)
+- [Introduction](#intro)
+- [Contributing](#contributing)
+
+====
+
+<a name="install"></a>
+## Install
+
+`composer install eden/handler`
+
+====
+
+<a name="intro"></a>
+## Introduction
+
+TODO
+
+====
+
+<a name="contributing"></a>
 #Contributing to Eden
+
+Contributions to *Eden* are following the Github work flow. Please read up before contributing.
 
 ##Setting up your machine with the Eden repository and your fork
 
-1. Fork the main Eden repository (https://github.com/Eden-PHP/Handler)
-2. Fire up your local terminal and clone the *MAIN EDEN REPOSITORY* (git clone git://github.com/Eden-PHP/Handler.git)
-3. Add your *FORKED EDEN REPOSITORY* as a remote (git remote add fork git@github.com:*github_username*/Core.git)
-
-##Making pull requests
-
-1. Before anything, make sure to update the *MAIN EDEN REPOSITORY*. (git checkout master; git pull origin master)
-2. If PHP Unit testing is included in this package please make sure to update it and run the test to ensure everything still works (phpunit)
-3. Once updated with the latest code, create a new branch with a branch name describing what your changes are (git checkout -b bugfix/fix-twitter-auth)
-    Possible types:
+1. Fork the repository
+2. Fire up your local terminal create a new branch from the `v4` branch of your 
+fork with a branch name describing what your changes are. 
+ Possible branch name types:
     - bugfix
     - feature
     - improvement
-4. Make your code changes. Always make sure to sign-off (-s) on all commits made (git commit -s -m "Commit message")
-5. Once you've committed all the code to this branch, push the branch to your *FORKED EDEN REPOSITORY* (git push fork bugfix/fix-twitter-auth)
-6. Go back to your *FORKED EDEN REPOSITORY* on GitHub and submit a pull request.
-7. An Eden developer will review your code and merge it in when it has been classified as suitable.
+3. Make your changes. Always make sure to sign-off (-s) on all commits made (git commit -s -m "Commit message")
+
+##Making pull requests
+
+1. Please ensure to run `phpunit` before making a pull request.
+2. Push your code to your remote forked version.
+3. Go back to your forked version on GitHub and submit a pull request.
+4. An Eden developer will review your code and merge it in when it has been classified as suitable.

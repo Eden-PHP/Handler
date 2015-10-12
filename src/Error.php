@@ -1,5 +1,5 @@
 <?php //-->
-/*
+/**
  * This file is part of the Eden package.
  * (c) 2014-2016 Openovate Labs
  *
@@ -14,7 +14,8 @@ namespace Eden\Handler;
  *
  * @package  Eden
  * @category handler
- * @author   Christian Blanquera cblanquera@openovate.com
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Error extends Base
 {
@@ -36,6 +37,7 @@ class Error extends Base
      * @param  *string message
      * @param  *string file
      * @param  *string line
+     *
      * @return true
      */
     public function handle($errno, $errstr, $errfile, $errline)
@@ -116,6 +118,7 @@ class Error extends Base
      * Sets reporting
      *
      * @param  *int
+     *
      * @return this
      */
     public function setReporting($type)
