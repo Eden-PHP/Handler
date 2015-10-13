@@ -1,6 +1,6 @@
 <?php //-->
-/*
- * This file is part of the Eden package.
+/**
+ * This file is part of the Eden PHP Library.
  * (c) 2014-2016 Openovate Labs
  *
  * Copyright and license information can be found at LICENSE.txt
@@ -13,29 +13,46 @@ namespace Eden\Handler;
  * Error event hander
  *
  * @package  Eden
- * @category handler
- * @author   Christian Blanquera cblanquera@openovate.com
+ * @category Handler
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Error extends Base
 {
-    const INSTANCE     = 1;
+    /**
+     * @const int INSTANCE Flag that designates singleton when using ::i()
+     */
+    const INSTANCE = 1;
     
-    //error type
-    const PHP         = 'PHP'; //used when argument is invalidated
-    const UNKNOWN     = 'UNKNOWN';
+    /**
+     * @const int PHP Used when the problem came from PHP code
+     */
+    const PHP = 'PHP';
+    
+    /**
+     * @const int UNKNOWN Used when we don't know exactly the source
+     */
+    const UNKNOWN = 'UNKNOWN';
 
-    //error level
-    const WARNING     = 'WARNING';
-    const ERROR     = 'ERROR';
+    /**
+     * @const int WARNING Used when we want to output the error but continue
+     */
+    const WARNING = 'WARNING';
+    
+    /**
+     * @const int ERROR Used when we want to output the error and exit
+     */
+    const ERROR = 'ERROR';
     
     /**
      * Called when a PHP error has occured. Must
      * use setErrorHandler() first.
      *
-     * @param  *number error number
-     * @param  *string message
-     * @param  *string file
-     * @param  *string line
+     * @param *number $errno   Error number
+     * @param *string $errstr  Error message
+     * @param *string $errfile Error file name where it was triggered
+     * @param *string $errline Error line where it was triggered
+     *
      * @return true
      */
     public function handle($errno, $errstr, $errfile, $errline)
@@ -93,7 +110,7 @@ class Error extends Base
     /**
      * Returns default handler back to PHP
      *
-     * @return this
+     * @return Eden\Handler\Error
      */
     public function release()
     {
@@ -104,7 +121,7 @@ class Error extends Base
     /**
      * Registers this class' error handler to PHP
      *
-     * @return this
+     * @return Eden\Handler\Error
      */
     public function register()
     {
@@ -115,8 +132,9 @@ class Error extends Base
     /**
      * Sets reporting
      *
-     * @param  *int
-     * @return this
+     * @param *int $type type
+     *
+     * @return Eden\Handler\Error
      */
     public function setReporting($type)
     {

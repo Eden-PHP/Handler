@@ -1,6 +1,6 @@
 <?php //-->
-/*
- * This file is part of the Eden package.
+/**
+ * This file is part of the Eden PHP Library.
  * (c) 2014-2016 Openovate Labs
  *
  * Copyright and license information can be found at LICENSE.txt
@@ -13,11 +13,15 @@ namespace Eden\Handler;
  * Core Factory Class
  *
  * @package  Eden
- * @category handler
- * @author   Christian Blanquera cblanquera@openovate.com
+ * @category Handler
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Index extends Base
 {
+    /**
+     * @const int INSTANCE Flag that designates singleton when using ::i()
+     */
     const INSTANCE = 1;
      
     /**
