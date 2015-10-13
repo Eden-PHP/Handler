@@ -1,6 +1,6 @@
 <?php //-->
 /**
- * This file is part of the Eden package.
+ * This file is part of the Eden PHP Library.
  * (c) 2014-2016 Openovate Labs
  *
  * Copyright and license information can be found at LICENSE.txt
@@ -19,24 +19,39 @@ namespace Eden\Handler;
  */
 class Error extends Base
 {
-    const INSTANCE     = 1;
+    /**
+     * @const int INSTANCE Flag that designates singleton when using ::i()
+     */
+    const INSTANCE = 1;
     
-    //error type
-    const PHP         = 'PHP'; //used when argument is invalidated
-    const UNKNOWN     = 'UNKNOWN';
+    /**
+     * @const int PHP Used when the problem came from PHP code
+     */
+    const PHP = 'PHP';
+    
+    /**
+     * @const int UNKNOWN Used when we don't know exactly the source
+     */
+    const UNKNOWN = 'UNKNOWN';
 
-    //error level
-    const WARNING     = 'WARNING';
-    const ERROR     = 'ERROR';
+    /**
+     * @const int WARNING Used when we want to output the error but continue
+     */
+    const WARNING = 'WARNING';
+    
+    /**
+     * @const int ERROR Used when we want to output the error and exit
+     */
+    const ERROR = 'ERROR';
     
     /**
      * Called when a PHP error has occured. Must
      * use setErrorHandler() first.
      *
-     * @param  *number  $errno      error number
-     * @param  *string  $errstr     message
-     * @param  *string  $errfile    file
-     * @param  *string  $errline    line
+     * @param *number $errno   Error number
+     * @param *string $errstr  Error message
+     * @param *string $errfile Error file name where it was triggered
+     * @param *string $errline Error line where it was triggered
      *
      * @return true
      */
@@ -117,7 +132,7 @@ class Error extends Base
     /**
      * Sets reporting
      *
-     * @param  *int $type type
+     * @param *int $type type
      *
      * @return Eden\Handler\Error
      */
